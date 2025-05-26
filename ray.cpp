@@ -2,8 +2,7 @@
 #include <iostream>
 #include <vector>
 
-struct vec3
-{
+struct vec3 {
     vec3() = default;
 
     vec3(float e0, float e1, float e2) {
@@ -193,8 +192,7 @@ unit_vector(vec3 v) {
     return v / v.length();
 }
 
-struct ray
-{
+struct ray {
     ray() = default;
     ray(const vec3& a, const vec3& b)
         : A(a),
@@ -234,23 +232,20 @@ hit_sphere(const vec3& center, float radius, const ray& r) {
     }
 }
 
-struct hit_record
-{
+struct hit_record {
     float t;
     vec3  p;
     vec3  normal;
 };
 
-struct hittable
-{
+struct hittable {
     virtual ~hittable() {}
 
     virtual bool
     hit(const ray& r, float t_min, float t_max, hit_record& rec) const = 0;
 };
 
-struct sphere : public hittable
-{
+struct sphere : public hittable {
     sphere() = default;
     sphere(vec3 cen, float r)
         : center(cen),
@@ -291,8 +286,7 @@ sphere::hit(const ray& r, float t_min, float t_max, hit_record& rec) const {
     return false;
 }
 
-struct hittable_list : public hittable
-{
+struct hittable_list : public hittable {
     hittable_list() = default;
     explicit hittable_list(const std::vector<const hittable*>& l)
         : list(l) {}
