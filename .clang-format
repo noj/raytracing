@@ -8,7 +8,7 @@ AlignConsecutiveAssignments:
   Enabled:         true
   AcrossEmptyLines: false
   AcrossComments:  false
-  AlignCompound:   false
+  AlignCompound:   true
   AlignFunctionPointers: false
   PadOperators:    true
 AlignConsecutiveBitFields:
@@ -64,7 +64,7 @@ BinPackParameters: false
 BitFieldColonSpacing: Both
 BraceWrapping:
   AfterCaseLabel:  false
-  AfterClass:      false
+  AfterClass:      true
   AfterControlStatement: Never
   AfterEnum:       false
   AfterExternBlock: false
@@ -90,7 +90,7 @@ BreakBeforeConceptDeclarations: Always
 BreakBeforeBraces: Custom
 BreakBeforeInlineASMColon: OnlyMultiline
 BreakBeforeTernaryOperators: true
-BreakConstructorInitializers: BeforeCommma
+# BreakConstructorInitializers: BeforeCommma
 BreakInheritanceList: BeforeColon
 BreakStringLiterals: true
 ColumnLimit:     80
